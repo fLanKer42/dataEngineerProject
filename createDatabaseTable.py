@@ -12,7 +12,7 @@ def createDatabaseTable():
     conn.autocommit = True
     #Creating a cursor object using the cursor() method
     cursor = conn.cursor()
-    sql = '''CREATE database mydb''';
+    sql = '''CREATE database rbi''';
 
     #Creating a database
     cursor.execute(sql)
