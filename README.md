@@ -36,7 +36,7 @@ Adds the data to the database
 2. Table name: NEFT
 3. Columns: YEAR, MONTH, BANK_NAME, NO_OF_OUTWARD_TRANSACTIONS, TOTAL_OUTWARD_DEBITS_AMOUNT_IN_LAKHS, NO_OF_INWARD_TRANSACTIONS, TOTAL_INWARD_CREDITS_AMOUNT_IN_LAKHS
 
-#3 Author
+## Author
 1. Name: Dhruv Rai
 2. Email: dhruv.rai2001@gmail.com
 3. Github: fLanKer42
