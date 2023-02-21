@@ -32,7 +32,7 @@ def addDataToPostgresFromGivenDictionary(dict1):
 
     #Inserting records into table
     for key, value in dict1.items():
-        sql = '''INSERT INTO NEFT(YEAR, MONTH, BANK_NAME, NO_OF_OUTWARD_TRANSACTIONS, TOTAL_OUTWARD_DEBITS_AMOUNT_IN_LAKHS, NO_OF_INWARD_TRANSACTIONS, TOTAL_INWARD_CREDITS_AMOUNT_IN_LAKHS) VALUES (%s, %s, %s, %s, %s, %s, %s)'''
+        sql = '''INSERT INTO NEFT(YEAR, MONTH, BANK_NAME, NO_OF_OUTWARD_TRANSACTIONS, TOTAL_OUTWARD_DEBITS_AMOUNT_IN_LAKHS, NO_OF_INWARD_TRANSACTIONS, TOTAL_INWARD_CREDITS_AMOUNT_IN_LAKHS) VALUES ('%s', '%s', '%s', %s, %s, %s, %s)'''
         cursor.execute(sql, value)
         print("Record inserted")
 
@@ -40,5 +40,5 @@ def addDataToPostgresFromGivenDictionary(dict1):
     conn.close()
 
 if __name__ == '__main__':
-    dict1 = {'1': ('2019', 'January', 'Bank of Baroda', 0, 0.00, 0, 0.00), '2': ('2019', 'January', 'Bank of India', 0, 0.00, 0, 0.00), '3': ('2019', 'January', 'Bank of Maharashtra', 0, 0.00, 0, 0.00), '4': ('2019', 'January', 'Canara Bank', 0, 0.00, 0, 0.00), '5': ('2019', 'January', 'Central Bank of India', 0, 0.00, 0, 0.00), '6': ('2019', 'January', 'Corporation Bank', 0, 0.00, 0, 0.00), '7': ('2019', 'January', 'Dena Bank', 0, 0.00, 0, 0.00), '8': ('2019', 'January', 'Indian Bank', 0, 0.00, 0, 0.00), '9': ('2019', 'January', 'Indian Overseas Bank', 0, 0.00, 0, 0.00), '10': ('2019', 'January', 'Oriental Bank of Commerce', 0, 0.00, 0, 0.00), '11': ('2019', 'January', 'Punjab National Bank', 0, 0.00, 0, 0.00), '12': ('2019', 'January', 'State Bank of India', 0, 0.00, 0, 0.00), '13': ('2019', 'January', 'Syndicate Bank', 0, 0.00, 0, 0.00), '14': ('2019', 'January', 'UCO Bank', 0, 0.00, 0, 0.00), '15': ('2019', 'January', 'Union Bank of India', 0, 0.00, 0, 0.00)}
-    addDataToPostgresFromGivenDictionary(dict1)
+    #dict1 = {'1': ('2019', 'January', 'Bank of Baroda', 0, 0.00, 0, 0.00), '2': ('2019', 'January', 'Bank of India', 0, 0.00, 0, 0.00), '3': ('2019', 'January', 'Bank of Maharashtra', 0, 0.00, 0, 0.00), '4': ('2019', 'January', 'Canara Bank', 0, 0.00, 0, 0.00), '5': ('2019', 'January', 'Central Bank of India', 0, 0.00, 0, 0.00), '6': ('2019', 'January', 'Corporation Bank', 0, 0.00, 0, 0.00), '7': ('2019', 'January', 'Dena Bank', 0, 0.00, 0, 0.00), '8': ('2019', 'January', 'Indian Bank', 0, 0.00, 0, 0.00), '9': ('2019', 'January', 'Indian Overseas Bank', 0, 0.00, 0, 0.00), '10': ('2019', 'January', 'Oriental Bank of Commerce', 0, 0.00, 0, 0.00), '11': ('2019', 'January', 'Punjab National Bank', 0, 0.00, 0, 0.00), '12': ('2019', 'January', 'State Bank of India', 0, 0.00, 0, 0.00), '13': ('2019', 'January', 'Syndicate Bank', 0, 0.00, 0, 0.00), '14': ('2019', 'January', 'UCO Bank', 0, 0.00, 0, 0.00), '15': ('2019', 'January', 'Union Bank of India', 0, 0.00, 0, 0.00)}
+    #addDataToPostgresFromGivenDictionary(dict1)
