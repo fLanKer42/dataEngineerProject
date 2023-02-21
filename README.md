@@ -4,13 +4,17 @@ index.py acts as a wrapper for the other scripts
 
 ### index.py calls the following scripts in the following order:
 1. createDatabaseTable.py
-2. fetch.py
-3. readXL.py
-4. deleteXL.py
-5. addDataToDatabase.py
+2. fetchLinksToExcelsFromRbi.py
+3. fetch.py
+4. readXL.py
+5. deleteXL.py
+6. addDataToDatabase.py
 
 ### createDatabaseTable.py
 Creates a table in the database
+
+### fetchLinksToExcelsFromRbi.py
+Fetches the links to the .xlsx files from RBI website
 
 ### fetch.py
 Fetches the data from RBI website and stores it in a .xlsx file
@@ -30,6 +34,8 @@ Adds the data to the database
 3. psycopg2
 4. requests
 5. openpyxl
+6. bs4
+7. re
 
 ## Database
 1. Database name: rbi

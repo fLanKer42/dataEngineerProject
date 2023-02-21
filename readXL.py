@@ -1,4 +1,6 @@
 import openpyxl
+from fetch import fetch_url
+from deleteXL import delete_XL
 
 def read_XL():
     '''
@@ -7,7 +9,7 @@ def read_XL():
     # Define variable to load the dataframe
     dataframe = openpyxl.load_workbook("test.xlsx")
 
-    dataframe1 = dataframe.active
+    dataframe1 = dataframe["NEFT"]
 
     # Iterate the loop to read the cell values
     sheet_data = dict()
@@ -26,4 +28,7 @@ def read_XL():
     return sheet_data
 
 if __name__ == '__main__':
-    pass
+    fetch_url("https://rbidocs.rbi.org.in/rdocs/NEFT/DOCs/NEFTRTGSJAN20238F691C3E20284DB9827EE56F372B87C0.XLSX")
+    x = read_XL()
+    print(x["1"])
+    delete_XL()

@@ -1,14 +1,19 @@
 import requests
-# URL to download
-
 
 def fetch_url(dls):
     '''
     Fetches the URL and saves the file to the current directory
     '''
-    resp = requests.get(dls, timeout=10)
+    while(True):
+        html_page = requests.get(dls)
+        if (html_page.status_code == 200):
+            print("Connection successful")
+            break
+        else:
+            print("Connection failed")
+            continue
     output = open('test.xlsx', 'wb')
-    output.write(resp.content)
+    output.write(html_page.content)
     output.close()
 
 if __name__ == '__main__':
