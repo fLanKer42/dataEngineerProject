@@ -1,7 +1,7 @@
 # Fetches data from RBI website and stores it in a postgres database
 
 ## Usage
-run python index.py in the terminal
+run ```python index.py``` in the terminal
 
 ## Working
 The scripts are written in Python 3.6. The data is fetched from the RBI website and stored in a PostgreSQL database. The scripts are written in such a way that they can be used to fetch data from the website and store it in the Postgres database.
