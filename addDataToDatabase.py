@@ -1,11 +1,35 @@
 import psycopg2
 
-def addDataToPostgresFromGivenDictionary(dict1):
-    '''Add data to postgres database from given dictionary'''
+def addRtgsDataToPostgresFromGivenDictionary(dict1):
+    '''
+    Add RTGS data to postgres database from given dictionary
+    '''
     # Connect to database
     #establishing the connection
     conn = psycopg2.connect(
-    database="postgres", user='postgres', password='password', host='127.0.0.1', port= '5432'
+        database="postgres", user='postgres', password='password', host='127.0.0.1', port= '5432'
+    )
+    conn.autocommit = True
+    #Creating a cursor object using the cursor() method
+    cursor = conn.cursor()
+
+    #Inserting records into table
+    for key, value in dict1.items():
+        sql = '''INSERT INTO RTGS(YEAR, MONTH, PARTICPANT, INWARD_VOLUME_INTERBANK, INWARD_VOLUME_CUSTOMER, INWARD_VOLUME_TOTAL, INWARD_VOLUME_PERCENT, INWARD_VALUE_INTERBANK_IN_CRORES, INWARD_VALUE_CUSTOMER_IN_CRORES, INWARD_VALUE_TOTAL_IN_CRORES, INWARD_VALUE_PERCENT, OUTWARD_VOLUME_INTERBANK, OUTWARD_VOLUME_CUSTOMER, OUTWARD_VOLUME_TOTAL, OUTWARD_VOLUME_PERCENT, OUTWARD_VALUE_INTERBANK_IN_CRORES, OUTWARD_VALUE_CUSTOMER_IN_CRORES, OUTWARD_VALUE_TOTAL_IN_CRORES, OUTWARD_VALUE_PERCENT) VALUES ('%s', '%s', '%s', %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
+        cursor.execute(sql, value)
+        print("Record inserted")
+    
+    #Closing the connection
+    conn.close()
+
+def addNeftDataToPostgresFromGivenDictionary(dict1):
+    '''
+    Add NEFT data to postgres database from given dictionary
+    '''
+    # Connect to database
+    #establishing the connection
+    conn = psycopg2.connect(
+        database="postgres", user='postgres', password='password', host='127.0.0.1', port= '5432'
     )
     conn.autocommit = True
     #Creating a cursor object using the cursor() method

@@ -3,7 +3,7 @@ import requests
 import re
 
 
-def fetch_url(dls):
+def fetch_links(dls):
     while(True):
         html_page = requests.get(dls)
         if (html_page.status_code == 200):
@@ -23,4 +23,4 @@ def fetch_url(dls):
 
 if __name__ == '__main__':
     dls = "https://rbi.org.in/Scripts/NEFTView.aspx"
-    fetch_url(dls)
+    fetch_links(dls)
