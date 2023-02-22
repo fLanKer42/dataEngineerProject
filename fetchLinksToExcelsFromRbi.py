@@ -1,11 +1,15 @@
+import re
 from bs4 import BeautifulSoup
 import requests
-import re
 
 
-def fetch_links(dls):
+
+def fetch_links(url = "https://rbi.org.in/Scripts/NEFTView.aspx"):
+    '''
+    This function fetches the links to the excel files from the RBI website
+    '''
     while(True):
-        html_page = requests.get(dls)
+        html_page = requests.get(url)
         if (html_page.status_code == 200):
             print("Connection successful")
             break
@@ -22,5 +26,5 @@ def fetch_links(dls):
     return(links)
 
 if __name__ == '__main__':
-    dls = "https://rbi.org.in/Scripts/NEFTView.aspx"
-    fetch_links(dls)
+    URL = "https://rbi.org.in/Scripts/NEFTView.aspx"
+    fetch_links(URL)
