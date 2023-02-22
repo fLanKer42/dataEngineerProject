@@ -1,6 +1,29 @@
 # Fetches data from RBI website and stores it in a postgres database
-index.py acts as a wrapper for the other scripts
-### Usage: python index.py
+
+## Usage
+run python index.py in the terminal
+
+## Working
+The scripts are written in Python 3.6. The data is fetched from the RBI website and stored in a PostgreSQL database. The scripts are written in such a way that they can be used to fetch data from the website and store it in the Postgres database.
+The database has two tables: NEFT and RTGS. The NEFT table stores data about the NEFT transactions and the RTGS table stores data about the RTGS transactions.
+
+## Directory Structure
+```
+.
+├── README.md
+├── createDatabaseTable.py
+├── fetchLinksToExcelsFromRbi.py
+├── fetch.py
+├── index.py
+├── readXL.py
+├── deleteXL.py
+└── addDataToDatabase.py
+```
+
+## Scripts
+
+### index.py
+Acts as a wrapper for the other scripts. It calls the other scripts in the order in which they are called.
 
 ### index.py calls the following scripts in the following order:
 1. createDatabaseTable.py
